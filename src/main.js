@@ -5,7 +5,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 iziToast.settings({
   position: "topRight",
-  timeout: 4000,
+  timeout: 5000,
   resetOnHover: true,
   transitionIn: "flipInX",
   transitionOut: "flipOutX"
@@ -30,6 +30,7 @@ function doApiRequest(e) {
 
   const searchStr = form.elements.searchStr.value.trim();
   if (!searchStr) {
+    form.reset();
     iziToast.error({message: "The search field cannot be empty!"});
     return;
   }
@@ -42,7 +43,7 @@ function doApiRequest(e) {
     image_type: "photo",
     orientation: "horizontal",
     safesearch: true,
-    per_page: 21,
+    per_page: 30,
     q: searchStr
   });
 
@@ -57,6 +58,7 @@ function doApiRequest(e) {
     })
 
     .then((imagesObj) => {
+      loader.style.display = "none";
       if (imagesObj.hits.length == 0) {
         iziToast.warning({message: "Sorry, there are no images matching<br> your search query.Please try again!"});
         return;
@@ -67,7 +69,6 @@ function doApiRequest(e) {
     .catch((error) => iziToast.error({message: `Api request error: ${error}`}))
 
     .finally(() => {
-      loader.style.display = "none";
       form.reset();
     });
 }

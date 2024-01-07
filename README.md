@@ -1,3 +1,5 @@
 ### goit-js-hw-11
 
-Ajax, image gallery
+Ajax, Image gallery
+
+iziToast, SimpleLightbox, css loader (spinner)
