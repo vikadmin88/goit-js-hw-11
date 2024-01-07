@@ -2,7 +2,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  display: block;
+  display: none;
   margin:15px auto;
   position: relative;
   background: #FFF;
@@ -26,34 +26,90 @@
   }
 }
 
-.loader2 {
-  width: 48px;
-  height: 48px;
-  display: inline-block;
-  position: relative;
-}
-.loader2::after,
-.loader2::before {
-  content: '';
-  box-sizing: border-box;
-  width: 48px;
-  height: 48px;
-  border: 2px solid #6C8CFF;
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: scaleOut 2s ease-in-out infinite;
-}
-.loader2::after {
-  border-color: #4E75FF;
-  animation-delay: 1s;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 0;
+  max-width: 1440px;
 }
 
-@keyframes scaleOut {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.input-text {
+  color: #2E2F42;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  background-color: #fff;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding: 8px 16px;
+  width: 272px;
+  height: 40px;
+  transition: border-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.input-text::placeholder {
+  color: #808080;
+}
+.input-text:hover {
+  border-color: #000000;
+}
+.input-text:focus {
+  border-color: #4E75FF;
+}
+.submit-btn {
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: #4E75FF;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.submit-btn:hover {
+  background-color: #6C8CFF;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto;
+}
+.gallery-item {
+  max-width: 100%;
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+.gallery-link {
+}
+.gallery-image {
+  max-width: 360px;
+}
+.metabox-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+.mbox-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mbox-info-title {
+  font-weight: 500;
+}
+.mbox-info-descr {
 }
