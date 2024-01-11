@@ -90,25 +90,29 @@ const fillGalleryCard = ({
   return `
     <li class="gallery-item">
       <a class="gallery-link" href="${largeImageURL}">
-        <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
-        <ul class="metabox-list">
-          <li class="mbox-info">
-            <p class="mbox-info-title">Likes</p>
-            <span class="mbox-info-descr">${likes}</span>
-          </li>
-          <li class="mbox-info">
-            <p class="mbox-info-title">Views</p>
-            <span class="mbox-info-descr">${views}</span>
-          </li>
-          <li class="mbox-info">
-            <p class="mbox-info-title">Comments</p>
-            <span class="mbox-info-descr">${comments}</span>
-          </li>
-          <li class="mbox-info">
-            <p class="mbox-info-title">Downloads</p>
-            <span class="mbox-info-descr">${downloads}</span>
-          </li>
-        </ul>
+        <div class="item-wrap">
+          <div class="image-wrap">
+            <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
+          </div>
+          <ul class="metabox-list">
+            <li class="mbox-info">
+              <p class="mbox-info-title">Likes</p>
+              <span class="mbox-info-descr">${likes}</span>
+            </li>
+            <li class="mbox-info">
+              <p class="mbox-info-title">Views</p>
+              <span class="mbox-info-descr">${views}</span>
+            </li>
+            <li class="mbox-info">
+              <p class="mbox-info-title">Comments</p>
+              <span class="mbox-info-descr">${comments}</span>
+            </li>
+            <li class="mbox-info">
+              <p class="mbox-info-title">Downloads</p>
+              <span class="mbox-info-descr">${downloads}</span>
+            </li>
+          </ul>
+        </div>
       </a>
     </li>`;
 };
